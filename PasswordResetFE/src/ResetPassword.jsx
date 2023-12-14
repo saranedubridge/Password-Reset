@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "./Style/Style.css"
  
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -29,19 +30,36 @@ function PasswordReset() {
     } catch (error) {
       console.error("Error:", error);
       setMessage(error.response.data.message);
+      alert('link Expired')
+      navigate('/login')
     }
   };
   return (
-    <div>
-      <h2>Set New Password</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          New Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        </label>
-        <button type="submit">Update</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className="register-container"> {/* Apply the same container class */}
+      <div className="register-form"> {/* Apply the same form class */}
+        <h2 className="text-center">Password</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="newpassword" className="form-label">
+              New Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="newpassword"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="text-center">
+            <button type="submit" className="btn btn-primary">
+              Update
+            </button>
+          </div>
+        </form>
+        {message && <p className="text-center mt-3">{message}</p>}
+      </div>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import{useNavigate}from 'react-router-dom'
-
+import "./Style/Style.css"
 
 function PasswordResetRequest() {
 
@@ -34,24 +34,35 @@ function PasswordResetRequest() {
     }
     
 
-  return (
-<div>
-    <h2>Reset Password</h2>
-
-    <form onSubmit={handleSubmit}>
-    <strong>Email</strong><br/>
-            <input
-              type="text"
-              placeholder='Enter Email'
-              value={email}
-              onChange={(event)=>setEmail(event.target.value)}
-              required
-            /><br/>
-                <button type="submit">Send Reset Link</button>
+    return (
+        <div className="register-container"> {/* Apply the same container class */}
+          <div className="register-form"> {/* Apply the same form class */}
+            <h2 className="text-center">Reset Password</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="email"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  required
+                />
+              </div>
+              <div className="text-center">
+                <button type="submit" className="btn btn-primary">
+                  Send Reset Link
+                </button>
+              </div>
             </form>
-            {message && <p>{message}</p>}
-</div>
-  )
-}
+            {message && <p className="text-center mt-3">{message}</p>}
+          </div>
+        </div>
+      );
+    }
 
 export default PasswordResetRequest;

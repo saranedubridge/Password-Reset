@@ -2,6 +2,7 @@ import{useState}from 'react'
 import axios from 'axios'
 import{Link, useNavigate}from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import "./Style/Style.css"
 
 function Login() {
     const[email,setEmail]=useState('')
@@ -48,38 +49,55 @@ function Login() {
       };
 
 
-  return (
-    <div>
-        <h2>Login</h2>
-        
-        <form onSubmit={handleSubmit}>
-    
-        <strong>Email</strong><br/>
-            <input
-              type="text"
-              placeholder='Enter Email'
-              value={email}
-              onChange={(event)=>setEmail(event.target.value)}
-              required
-            /><br/>
-
-        <strong>Password</strong><br/>
-            <input
-              type="text"
-              placeholder='Enter Password'
-              value={password}
-              onChange={(event)=>setPassword(event.target.value)}
-              required
-            /><br/><br/>
-            <button type="submit">Login</button>
-
-        </form>
-        <p>Don`t Have an Account</p>
-        <Link to="/forget-password">Forget Password</Link> <br/>
-        <Link to='/'>Register</Link>
-        {error && <div className="alert alert-danger">{error}</div>}
-    </div>
-  )
-}
-
+  
+    return (
+      <div className="register-container"> {/* Apply the same container class */}
+        <div className="register-form"> {/* Apply the same form class */}
+          <h2 className="text-center">Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                placeholder="Enter Email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+              />
+            </div>
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </div>
+          </form>
+          <p className="text-center mt-3">
+            Don't Have an Account? <Link to="/">Register</Link>
+          </p>
+          <p className="text-center mt-3">
+          <Link to="/forget-password">Forget Password</Link>
+          </p> <br />
+          {error && <div className="alert alert-danger">{error}</div>}
+        </div>
+      </div>
+    );
+  }
 export default Login
