@@ -1,0 +1,65 @@
+/* Apply styles to the registration container */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Background color similar to the image */
+  }
+  
+  /* Apply styles to the registration form */
+  .register-form {
+    background-color: #ffffff; /* Background color for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Adjust the width as needed */
+  }
+  
+  /* Style the form headings */
+  .register-form h2 {
+    text-align: center;
+    color: #333; /* Text color similar to the image */
+  }
+  
+  /* Style form inputs and labels */
+  .register-form input[type="text"],
+  .register-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Style the Register button */
+  .register-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color similar to Bootstrap primary color */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* Button text color */
+    cursor: pointer;
+  }
+  
+  .register-form button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+  
+  /* Style the "Already Have an Account" link */
+  .register-form p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .register-form a {
+    color: #007bff; /* Link color similar to Bootstrap primary color */
+    text-decoration: none;
+  }
+  
+  .register-form a:hover {
+    text-decoration: underline;
+  }
+  

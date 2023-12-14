@@ -1,0 +1,75 @@
+/* Apply styles to the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Background color similar to the image */
+  }
+  
+  /* Apply styles to the login form */
+  .login-form {
+    background-color: #ffffff; /* Background color for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px; /* Adjust the width as needed */
+  }
+  
+  /* Style the form headings */
+  .login-form h2 {
+    text-align: center;
+    color: #333; /* Text color similar to the image */
+  }
+  
+  /* Style form inputs and labels */
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  /* Style the Login button */
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Button background color similar to Bootstrap primary color */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* Button text color */
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #0056b3; /* Button background color on hover */
+  }
+  
+  /* Style the "Don't Have an Account" and "Forget Password" links */
+  .login-form p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .login-form a {
+    color: #007bff; /* Link color similar to Bootstrap primary color */
+    text-decoration: none;
+  }
+  
+  .login-form a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style the error message */
+  .login-form .alert-danger {
+    background-color: #f8d7da; /* Error message background color */
+    border-color: #f5c6cb; /* Error message border color */
+    color: #721c24; /* Error message text color */
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
